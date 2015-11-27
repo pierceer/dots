@@ -3,6 +3,7 @@ name = Eric Pierce
 email = pierceer@gmail.com
 
 [alias]
+co = checkout
 b = branch
 l = log --shortstat
 mg = merge
