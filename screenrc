@@ -2,6 +2,7 @@ vbell off
 shelltitle ''
 setenv LC_CTYPE en_US.UTF-8
 defutf8 on
+term rxvt-256color
 
 silencewait 15
 
