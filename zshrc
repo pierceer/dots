@@ -102,7 +102,16 @@ logcheck=30
 stty start ""
 stty stop ""
 
-local zsh_path="$HOME/dots/zsh"
+local SOURCE=${(%):-%N}
+local DIR=""
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+local DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+local zsh_path="$DOTFILES_DIR/zsh"
 for file ($zsh_path/*.{z,}sh(N))
     source $file
 
@@ -122,7 +131,7 @@ function screen_set() {
 }
 
 
-source ~/dots/zsh/z.sh
+source $DOTFILES_DIR/zsh/z.sh
 
 function preexec() {
     local -a cmd; cmd=(${(z)1})

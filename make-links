@@ -16,7 +16,8 @@ zshrc
 # Create symbolic links for all configuration files
 for file in $FILES
 do
-	SOURCE="$HOME/dots/$file"
+	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+	SOURCE="$DIR/$file"
 	TARGET="$HOME/.$file"
 
 	# Create backup file if the target already exists and is not a symlink
