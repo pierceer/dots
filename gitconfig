@@ -1,6 +1,7 @@
 [user]
 name = Eric Pierce
 email = pierceer@gmail.com
+	signingkey = 7A04B50163BC9099
 
 [alias]
 co = checkout
@@ -30,3 +31,5 @@ tool = vimdiff
 conflictstyle = diff3
 [push]
 	default = simple
+[commit]
+	gpgsign = true
